@@ -1,0 +1,52 @@
+04-Sep-2024 10:44:38.025 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/9.0.93
+04-Sep-2024 10:44:38.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Aug 2 2024 21:24:59 UTC
+04-Sep-2024 10:44:38.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  9.0.93.0
+04-Sep-2024 10:44:38.036 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Mac OS X
+04-Sep-2024 10:44:38.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     13.5
+04-Sep-2024 10:44:38.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          x86_64
+04-Sep-2024 10:44:38.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           /Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home
+04-Sep-2024 10:44:38.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          18.0.2.1+1-1
+04-Sep-2024 10:44:38.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+04-Sep-2024 10:44:38.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     /Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93
+04-Sep-2024 10:44:38.040 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     /Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93
+04-Sep-2024 10:44:38.098 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Sep-2024 10:44:38.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+04-Sep-2024 10:44:38.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+04-Sep-2024 10:44:38.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-Sep-2024 10:44:38.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Sep-2024 10:44:38.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/conf/logging.properties
+04-Sep-2024 10:44:38.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Sep-2024 10:44:38.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+04-Sep-2024 10:44:38.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Sep-2024 10:44:38.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Sep-2024 10:44:38.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dignore.endorsed.dirs=
+04-Sep-2024 10:44:38.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93
+04-Sep-2024 10:44:38.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93
+04-Sep-2024 10:44:38.102 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/temp
+04-Sep-2024 10:44:38.117 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 프로덕션 환경들에서 최적의 성능을 제공하는, APR 기반 Apache Tomcat Native 라이브러리가, 다음 java.library.path에서 발견되지 않습니다: [/Users/seuo/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-Sep-2024 10:44:39.048 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+04-Sep-2024 10:44:39.215 INFO [main] org.apache.catalina.startup.Catalina.load [1666] 밀리초 내에 서버가 초기화되었습니다.
+04-Sep-2024 10:44:39.356 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+04-Sep-2024 10:44:39.358 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/9.0.93]
+04-Sep-2024 10:44:39.374 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/docs]을(를) 배치합니다.
+04-Sep-2024 10:44:40.673 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+04-Sep-2024 10:44:40.797 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/docs]에 대한 배치가 [1,414] 밀리초에 완료되었습니다.
+04-Sep-2024 10:44:40.798 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/manager]을(를) 배치합니다.
+04-Sep-2024 10:44:41.104 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+04-Sep-2024 10:44:41.141 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/manager]에 대한 배치가 [343] 밀리초에 완료되었습니다.
+04-Sep-2024 10:44:41.142 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/examples]을(를) 배치합니다.
+04-Sep-2024 10:44:41.910 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+04-Sep-2024 10:44:42.000 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/examples]에 대한 배치가 [859] 밀리초에 완료되었습니다.
+04-Sep-2024 10:44:42.002 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/ROOT]을(를) 배치합니다.
+04-Sep-2024 10:44:42.144 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+04-Sep-2024 10:44:42.148 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/ROOT]에 대한 배치가 [145] 밀리초에 완료되었습니다.
+04-Sep-2024 10:44:42.148 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/host-manager]을(를) 배치합니다.
+04-Sep-2024 10:44:42.276 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+04-Sep-2024 10:44:42.283 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [/Users/seuo/Desktop/DEV/Personal/BrushUp/WEB_SERVER/apache-tomcat-9.0.93/webapps/host-manager]에 대한 배치가 [134] 밀리초에 완료되었습니다.
+04-Sep-2024 10:44:42.293 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+04-Sep-2024 10:44:42.337 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3115] 밀리초 내에 시작되었습니다.
+04-Sep-2024 10:45:02.448 INFO [main] org.apache.catalina.core.StandardServer.await 셧다운 포트를 통해 유효한 셧다운 명령을 받았습니다. 서버 인스턴스를 중지시킵니다.
+04-Sep-2024 10:45:02.452 INFO [main] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8080"]을(를) 일시 정지 중
+04-Sep-2024 10:45:02.464 INFO [main] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+04-Sep-2024 10:45:02.587 INFO [main] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8080"]을(를) 중지시킵니다.
+04-Sep-2024 10:45:02.605 INFO [main] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8080"]을(를) 소멸시킵니다.
