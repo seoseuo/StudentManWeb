@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="container">
-        <button class="menu-button" onclick="">홈</button>
-        <h1>학생 조회</h1>
+        <button class="menu-button" onclick="window.location.href='index.html';">홈</button>
+
+        <h1>정보 수정</h1>
         <hr>
         <form method="get" action="/submit">
-            <label for="num">조회할 학생의 학번 <span class="input_warn"></span></label>
+            <label for="num">수정할 학생의 학번 <span class="input_warn"></span></label>
             <input type="text" id="num" name="num" placeholder="20XXXXXX" required>
             <input type="submit" value="검색">
         </form>
