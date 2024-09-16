@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 등록</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="menu-button" onclick="">홈</button>
+        <h1>학생 등록</h1>
+        <hr>
+        <form method="get" action="/submit">
+            <label for="num">학번 <span class="input_warn"></span></label>
+            <input type="text" id="num" name="num" placeholder="20XXXXXX" required>
+
+            <label for="name">이름 <span class="input_warn"></span></label>
+            <input type="text" id="name" name="name" placeholder="한글로 공백 없이 입력하세요" required>
+
+            <label for="major">학과 <span class="input_warn"></span></label>
+            <input type="text" id="major" name="major" placeholder="한글로 공백 없이 입력하세요" required>
+
+            <label for="phone">전화번호 <span class="input_warn"></span></label>
+            <input type="text" id="phone" name="phone" placeholder="010-0000-0000" required>
+
+            <input type="submit" value="등록">
+        </form>
+    </div>
+</body>
+</html>
