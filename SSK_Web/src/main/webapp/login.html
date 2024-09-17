@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>로그인</h1>
+        <hr>
+        <form method="get" action="/submit">
+            <label for="num">아이디 <span class="input_warn"></span></label>
+            <input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required>
+
+            <label for="name">비밀번호</label>
+            <input type="text" id="password" name="password" placeholder="비밀번호를 입력하세요." required>
+
+            <input type="submit" value="로그인">
+        </form>
+            <a href="signUp.html"><button style="width: 330px;">회원가입</button></a>
+    </div>
+</body>
+</html>

@@ -114,7 +114,8 @@ input[type="text"]:focus {
     outline: none;
     box-shadow: inset 0 2px 8px rgba(109, 153, 255, 0.5);
 }
-input[type="submit"] {
+input[type="submit"], button {
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #007aff;
     color: white;
@@ -124,9 +125,10 @@ input[type="submit"] {
     font-size: 12px;
     transition: background-color 0.3s ease;
 }
-input[type="submit"]:hover {
+input[type="submit"]:hover, button:hover {
     background-color: #005fcc;
 }
+
 
 .input_warn {
     color: rgb(255, 76, 76);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 등록</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h1>관리자 회원 가입</h1>
+        <hr>
+        <form method="get" action="/submit">
+            <label for="num">아이디 <span class="input_warn"></span></label>
+            <input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required>
+
+            <label for="name">비밀번호</label>
+            <input type="text" id="password" name="password" placeholder="비밀번호를 입력하세요." required>
+
+            <label for="major">이름</label>
+            <input type="text" id="name" name="name" placeholder="한글로 공백 없이 입력하세요." required>
+
+            <label for="phone">등록할 학생 수</label>
+            <input type="text" id="phone" name="phone" placeholder="정수 값을 입력해주세요." required>
+
+            <input type="submit" value="회원가입">
+        </form>
+    </div>
+</body>
+</html>
