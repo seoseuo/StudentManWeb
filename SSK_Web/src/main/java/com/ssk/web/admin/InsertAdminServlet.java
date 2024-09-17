@@ -17,7 +17,7 @@ import com.ssk.biz.admin.AdminVO;
  */
 
 @WebServlet(urlPatterns = "/insertAdmin.do")
-public class insertAdminServlet extends HttpServlet {
+public class InsertAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String encoding;
 
@@ -28,29 +28,32 @@ public class insertAdminServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		System.out.println("insertAdminServlet ==> /insertAdmin.do");
+
+		System.out.println("InsertAdminServlet ==> /insertAdmin.do");
 
 		// 1. 인코딩 처리.
 		request.setCharacterEncoding("UTF-8");
 		ServletContext context = getServletContext();
 		encoding = context.getInitParameter("boardEncoding");
-		
-		// 2. 프론트에서 값 얻어냄. 
+
+		// 2. 프론트에서 값 얻어냄.
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String count = request.getParameter("count");
-		
+
 		// 3. DB 연동 처리.
 		AdminVO advo = new AdminVO();
 		advo.setId(id);
 		advo.setPassword(password);
 		advo.setName(name);
 		advo.setCount(Integer.parseInt(count));
-		
+
 		AdminDAO adao = new AdminDAO();
 		adao.insertAdmin(advo);
+
+		// 4. 화면 이동
+		response.sendRedirect("login.html");
 	}
 
 }
