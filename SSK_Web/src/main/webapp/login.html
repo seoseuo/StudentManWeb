@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Manager</title>
+    <title>학생 관리 웹 - 로그인</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/loginAdmin.js"></script>
 </head>
 <body>
     <div class="container">
         
         <h1>학생 관리 웹 로그인</h1>
         <hr>
-        <form method="post" action="/login.do">
-            <label for="num">아이디 <span class="input_warn"></span></label>
-            <input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required>
+        <form id="loginAdminForm" method="post" action="/login.do">
+            <label for="num">아이디 <span class="input_warn" id="id_warn"></span></label>
+            <input type="text" id="id" name="id" placeholder="아이디를 입력하세요.">
 
-            <label for="name">비밀번호</label>
-            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요." required>
+            <label for="name">비밀번호 <span class="input_warn" id="pw_warn"></span></label>
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요.">
 
             <input type="submit" value="로그인">
         </form>
