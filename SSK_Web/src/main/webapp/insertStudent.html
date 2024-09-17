@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>학생 등록</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/insertStudent.js"></script>
 </head>
 <body>
     <div class="container">
@@ -12,18 +13,18 @@
 
         <h1>학생 등록</h1>
         <hr>
-        <form method="get" action="/submit">
-            <label for="num">학번 <span class="input_warn"></span></label>
-            <input type="text" id="num" name="num" placeholder="20XXXXXX" required>
+        <form id="insertStudentForm" method="post" action="/submit">
+            <label for="num">학번 <span class="input_warn" id="num_warn"></span></label>
+            <input type="text" id="num" name="num" placeholder="학번을 입력하세요. 예시 : 20******" >
 
-            <label for="name">이름 <span class="input_warn"></span></label>
-            <input type="text" id="name" name="name" placeholder="한글로 공백 없이 입력하세요" required>
+            <label for="name">이름 <span class="input_warn" id="name_warn"></span></label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요." >
 
-            <label for="major">학과 <span class="input_warn"></span></label>
-            <input type="text" id="major" name="major" placeholder="한글로 공백 없이 입력하세요" required>
+            <label for="major">학과 <span class="input_warn" id="major_warn"></span></label>
+            <input type="text" id="major" name="major" placeholder="전공을 입력하세요." >
 
-            <label for="phone">전화번호 <span class="input_warn"></span></label>
-            <input type="text" id="phone" name="phone" placeholder="010-0000-0000" required>
+            <label for="phone">전화번호 <span class="input_warn" id="phone_warn"></span></label>
+            <input type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요. 예시 : 010-****-****" >
 
             <input type="submit" value="등록">
         </form>
