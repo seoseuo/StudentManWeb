@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (/\s/.test(major)) {
             majorWarn.textContent = '* 전공에 공백은 포함될 수 없습니다.'; // 2. 공백이 포함되어 있을 때
             isValid = false;
-        } else if (/[A-Za-z]/.test(major)) {
-            majorWarn.textContent = '* 전공에 영어는 포함될 수 없습니다.'; // 3. 전공에 영어가 포함되어 있을 때
+        } else if (!/^[가-힣]+$/.test(major)) {
+            majorWarn.textContent = '* 전공은 올바른 한글 단어만 입력 가능합니다.'; // 3. 전공에 영어 또는 다른 문자가 포함될 때
             isValid = false;
         } else {
             majorWarn.textContent = ''; // 경고 메시지 초기화
