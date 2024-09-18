@@ -32,6 +32,15 @@ public class InsertStudentServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		System.out.println("InsertStudentServlet ==> /insertStudent.do");
+		
+		// 0. 상태 정보 체크
+				HttpSession session = request.getSession();
+				String adminId = (String) session.getAttribute("adminId");
+				System.out.println("InsertStudentServlet ==> adminId : " + adminId);
+
+				if (adminId == null) {
+					response.sendRedirect("/");
+				}
 
 		// 인코딩 처리
 		request.setCharacterEncoding("UTF-8");
@@ -50,8 +59,8 @@ public class InsertStudentServlet extends HttpServlet {
 		String major = request.getParameter("major");
 		String phone = request.getParameter("phone");
 		
-		HttpSession session = request.getSession();
-		String adminId = (String) session.getAttribute("adminId");
+		session = request.getSession();
+		adminId = (String) session.getAttribute("adminId");
 
 		// 2. DB 연동 처리.
 		StudentVO stvo = new StudentVO();
@@ -77,7 +86,7 @@ public class InsertStudentServlet extends HttpServlet {
 		}
 		// 3. 등록을 마친 후 메인화면으로 이동.
 		System.out.println("InsertStudentServlet ==> 학생 등록 완료.");
-		response.sendRedirect("index.html");
+		response.sendRedirect("/toMain.do");
 
 	}
 
