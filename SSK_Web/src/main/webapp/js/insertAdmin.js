@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (/\s/.test(id)) {
             idWarn.textContent = '* 아이디에 공백은 포함될 수 없습니다.'; // 2. 공백이 포함되어 있을 때
             isValid = false;
-        } else if (/[\u3131-\uD79D]/.test(id)) { // 3. 한글이 포함되어 있을 때
-            idWarn.textContent = '* 아이디에 한글은 포함될 수 없습니다.';
+        } else if (/[^a-zA-Z0-9]/.test(id)) { // 3. 아이디에 영문자와 숫자 외의 문자가 포함될 때
+            idWarn.textContent = '* 아이디는 영문자와 숫자만 입력 가능합니다.';
             isValid = false;
         } else { // 오류 없을 때
             idWarn.textContent = ''; // 경고 메시지 초기화
@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (/\s/.test(name)) {
             nameWarn.textContent = '* 이름에 공백은 포함될 수 없습니다.'; // 2. 공백이 포함되어 있을 때
             isValid = false;
-        } else if (/[A-Za-z]/.test(name)) {
-            nameWarn.textContent = '* 이름에 영어는 포함될 수 없습니다.'; // 3. 이름에 영어가 포함되어 있을 때
+        } else if (!/^[가-힣]+$/.test(name)) {
+            nameWarn.textContent = '* 이름은 올바른 한글만 입력 가능합니다.'; // 3. 이름에 영어 또는 다른 문자가 포함될 때
             isValid = false;
         } else {
             nameWarn.textContent = ''; // 경고 메시지 초기화
