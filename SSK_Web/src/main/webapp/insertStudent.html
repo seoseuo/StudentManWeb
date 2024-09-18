@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생 등록</title>
+    <title>학생 관리 웹 - 학생 등록</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/insertStudent.js"></script>
 </head>
 <body>
     <div class="container">
-        <button class="menu-button" onclick="window.location.href='index.html';">홈</button>
+        <button class="menu-button" onclick="window.location.href='/toMain.do';">홈</button>
 
         <h1>학생 등록</h1>
         <hr>
-        <form id="insertStudentForm" method="post" action="/submit">
+        <form id="insertStudentForm" method="post" action="/insertStudent.do">
             <label for="num">학번 <span class="input_warn" id="num_warn"></span></label>
             <input type="text" id="num" name="num" placeholder="학번을 입력하세요. 예시 : 20******" >
 
@@ -21,7 +21,7 @@
             <input type="text" id="name" name="name" placeholder="이름을 입력하세요." >
 
             <label for="major">학과 <span class="input_warn" id="major_warn"></span></label>
-            <input type="text" id="major" name="major" placeholder="전공을 입력하세요." >
+            <input type="text" id="major" name="major" placeholder="전공을 입력하세요. 예시 : **학과" >
 
             <label for="phone">전화번호 <span class="input_warn" id="phone_warn"></span></label>
             <input type="text" id="phone" name="phone" placeholder="전화번호를 입력하세요. 예시 : 010-****-****" >
