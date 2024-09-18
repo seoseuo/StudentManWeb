@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (!/^[가-힣]+$/.test(major)) {
             majorWarn.textContent = '* 전공은 올바른 한글 단어만 입력 가능합니다.'; // 3. 전공에 영어 또는 다른 문자가 포함될 때
             isValid = false;
+        } else if (!/^[가-힣]+학과$/.test(major)) {
+            majorWarn.textContent = '* 전공은 양식은 **학과 입니다.'; // 전공이 한글로만 이루어져야 하고 "학과"로 끝나야 하는 경우
+            isValid = false;
         } else {
             majorWarn.textContent = ''; // 경고 메시지 초기화
         }
