@@ -70,7 +70,7 @@ public class ToInsertStudentServlet extends HttpServlet {
 			// 메인 화면으로 다시 이동한다.
 			out.println("<script>");
 			out.println("alert('가입 시 설정한 등록할 학생 수를 초과하는 등록입니다.');");
-			out.println("history.back();"); // 이전 페이지, 즉 메인 페이지로 돌아가기
+			out.println("window.location.href='/toMain.do';"); // 메인 페이지로 이동
 			out.println("</script>");
 		}
 	}
