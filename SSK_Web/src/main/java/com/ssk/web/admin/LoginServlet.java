@@ -65,19 +65,25 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("LoginServlet ==> " + "adminName : " + checkAdvo.getName());
 				System.out.println("LoginServlet ==> " + "adminCount : " + checkAdvo.getCount());
 
-				// 메인 화면으로 이동한다.
-				response.sendRedirect("index.html");
-
 				System.out.println("LoginServlet ==> 로그인 성공.");
 
-			}
-		} else { // 로그인 실패 시.
-			System.out.println("LoginServlet ==> 로그인 실패.");
+				// 메인 화면으로 이동한다.
+				response.sendRedirect("toMain.do");
 
+			} else { // 로그인 실패 시.
+				System.out.println("LoginServlet ==> 로그인 실패.");
+
+				// 로그인 화면으로 다시 이동한다.
+				out.println("<script>");
+				out.println("alert('아이디 혹은 비밀번호가 틀렸습니다.');");
+				out.println("history.back();"); // 이전 페이지로 돌아가기
+				out.println("</script>");
+			}
+		} else { // 회원 정보가 없을 
 			// 로그인 화면으로 다시 이동한다.
 			out.println("<script>");
-			out.println("alert('아이디 혹은 비밀번호가 틀렸습니다.');");
-			out.println("window.location.href = 'login.html';"); // 확인 버튼 클릭 후 로그인 페이지로 이동
+			out.println("alert('회원 정보가 없습니다.');");
+			out.println("history.back();"); // 이전 페이지로 돌아가기
 			out.println("</script>");
 		}
 	}
