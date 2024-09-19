@@ -18,12 +18,14 @@ public class StudentDAO {
 
 	private final String STUDENT_INSERT = "INSERT INTO STUDENT VALUES(?,?,?,?,?)"; // 학생 등록
 	private final String STUDENT_GETCOUNT_BY_ADMIN_ID = "SELECT COUNT(*) FROM STUDENT WHERE ADMIN_ID = ?"; // 관리자가 관리하는
-																											// 학생 인원 수
+																											// // 학생 인원
+																											// 수
 	// 직접 카운트 : 데이터베이스 서버에서 수행되므로 네트워크와 애플리케이션 서버의 리소스를 절약할 수 있습니다.
 
 	private final String STUDENT_GETLIST = "SELECT * FROM STUDENT WHERE ADMIN_ID = ? ORDER BY NUM ASC"; // 관리자가 관리하는 전체
-																										// 학생
+																										// // 학생
 	private final String STUDENT_GET = "SELECT * FROM STUDENT WHERE NUM = ?"; // 학생 정보 가져오기
+	private final String STUDENT_UPDATE = "UPDATE STUDENT SET MAJOR = ?, PHONE = ? WHERE NUM = ?"; // 학생 정보 업데이트
 
 	// 학생 등록하기
 	public void insertStudent(StudentVO stvo) throws SQLException {
@@ -147,9 +149,28 @@ public class StudentDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(getStvo.getAdminId() + " 관리자님, 학생 정보조회 ==> 학번 : " + getStvo.getNum() + " 이름 : " + getStvo.getName()
-				+ " 전공 : " + getStvo.getMajor() + " 전화번호 : " + getStvo.getPhone() + " | 데이터 처리 성공!");
+		System.out.println(
+				getStvo.getAdminId() + " 관리자님, 학생 정보 조회 ==> 학번 : " + getStvo.getNum() + " 이름 : " + getStvo.getName()
+						+ " 전공 : " + getStvo.getMajor() + " 전화번호 : " + getStvo.getPhone() + " | 데이터 처리 성공!");
 		return getStvo;
+	}
+
+	public void updateStudent(StudentVO stvo) {
+		// TODO Auto-generated method stub
+
+		try {
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(STUDENT_UPDATE);
+			stmt.setString(1, stvo.getMajor());
+			stmt.setString(2, stvo.getPhone());
+			stmt.setInt(3, stvo.getNum());
+			System.out.println(stvo.getAdminId() + " 관리자님, 학생 정보 수정 " + stmt.executeUpdate() + " 건 데이터 처리 성공!");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(stmt, conn);
+		}
 	}
 
 }

@@ -65,13 +65,13 @@ public class ToInsertStudentServlet extends HttpServlet {
 
 		else {
 			// 알람 창을 띄운 후, 이전 화면으로 이동.
-			System.out.println("ToInsertStudentServlet ==> 학생 등록 불가능, 메인 페이지로 이동.");
 
 			// 메인 화면으로 다시 이동한다.
 			out.println("<script>");
 			out.println("alert('가입 시 설정한 등록할 학생 수를 초과하는 등록입니다.');");
 			out.println("window.location.href='/toMain.do';"); // 메인 페이지로 이동
 			out.println("</script>");
+			System.out.println("ToInsertStudentServlet ==> 학생 등록 불가능, 메인 페이지로 이동.");
 		}
 	}
 

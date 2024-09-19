@@ -14,7 +14,7 @@ public class AdminDAO {
 	private ResultSet rs;
 
 	private final String ADMIN_INSERT = "INSERT INTO ADMIN VALUES(?,?,?,?)"; // 관리자 회원 가입
-	private final String ADMIN_GET = "SELECT * FROM ADMIN WHERE ID = ?";
+	private final String ADMIN_GET = "SELECT * FROM ADMIN WHERE ID = ?"; // 관리자 정보 가져오기
 
 	// 관리자 회원 가입
 	public void insertAdmin(AdminVO advo) {
@@ -32,7 +32,7 @@ public class AdminDAO {
 			stmt.setInt(4, advo.getCount());
 			// 정보 기입.
 
-			System.out.println(advo.getName() + " 관리자님, 회원가입" + stmt.executeLargeUpdate() + " 건 데이터 처리 성공!");
+			System.out.println(advo.getId() + " 관리자님, 회원가입" + stmt.executeLargeUpdate() + " 건 데이터 처리 성공!");
 			// 출력문으로 확인함과 동시에 stmt.execute 실행.
 
 		} catch (SQLException e) {
@@ -49,7 +49,7 @@ public class AdminDAO {
 		// TODO Auto-generated method stub
 
 		// 반환 객체 생성.
-		AdminVO admin = null;
+		AdminVO getAdvo = null;
 
 		try {
 			// 연결 얻기.
@@ -64,11 +64,11 @@ public class AdminDAO {
 
 			// 가져올 객체가 한개 뿐 이지만, 반복문을 사용하는 이유는 , 코드의 일관성 및 예기치 못한 오류를 방지하기 위함이다.
 			while (rs.next()) {
-				admin = new AdminVO();
-				admin.setId(rs.getString("id"));
-				admin.setPassword(rs.getString("password"));
-				admin.setName(rs.getString("name"));
-				admin.setCount(rs.getInt("count"));
+				getAdvo = new AdminVO();
+				getAdvo.setId(rs.getString("ID"));
+				getAdvo.setPassword(rs.getString("PASSWORD"));
+				getAdvo.setName(rs.getString("NAME"));
+				getAdvo.setCount(rs.getInt("COUNT"));
 			}
 			// 반환할 객체에 정보들을 설정.
 		} catch (SQLException e) {
@@ -77,7 +77,9 @@ public class AdminDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		return admin;
+		System.out.println(advo.getId() + " 관리자님, 정보조회 ==> 아이디 : " + getAdvo.getId() + " 이름 : " + getAdvo.getName()
+				+ " 등록할 학생 수 : " + getAdvo.getCount() + " | 데이터 처리 성공!");
+		return getAdvo;
 	}
 
 }

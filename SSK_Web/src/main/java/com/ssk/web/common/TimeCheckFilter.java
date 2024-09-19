@@ -19,18 +19,6 @@ public class TimeCheckFilter extends HttpFilter implements Filter {
     
 	private static final long serialVersionUID = 1L;
 	
-    /**
-     * @see HttpFilter#HttpFilter()
-     */
-    public TimeCheckFilter() {
-        //super();
-        // TODO Auto-generated constructor stub
-    	System.out.println("===> TimeCheckFilter 생성");
-    }
-
-	/**
-	 * @see Filter#destroy()
-	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
 		System.out.println("---> destroy() 호출");
@@ -56,7 +44,7 @@ public class TimeCheckFilter extends HttpFilter implements Filter {
 		long endTime = System.currentTimeMillis();
 		//System.out.println("---[ 사후 처리 ]---");
 		
-		System.out.println(path + " 요청 처리에 소요된 시간 : " + (endTime - startTime) + "(ms)초");
+		System.out.println(path + " 요청 처리에 소요된 시간 : " + (endTime - startTime) + "(ms)초\n");
 		//System.out.println("서블릿 수행에 소요된 시간 : " + (endTime - startTime) + "(ms)초");
 	}
 

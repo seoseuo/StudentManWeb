@@ -73,9 +73,11 @@ public class GetStudentListServlet extends HttpServlet {
 				out.println("                    <p><strong>전화번호:</strong> " + getStvo.getPhone() + "</p>");
 				out.println("                </div>");
 				out.println("            </div>");
+				System.out.println("GetStudentListServlet ==> 전체 출력 완료.");
 			}
 		} else {
 			out.println("<h2>등록된 학생이 없습니다.</h2>");
+			System.out.println("GetStudentListServlet ==> 전체 출력 미완료, 등록된 학생 없음.");
 		}
 		out.println("        </div>");
 		out.println("    </div>");

@@ -40,14 +40,13 @@ public class LoginServlet extends HttpServlet {
 		// 2. DB 연동 처리
 		AdminVO loginAdvo = new AdminVO();
 		loginAdvo.setId(id);
-		AdminDAO adao = new AdminDAO();
+		
 
 		// 로그인 확인 용 객체 생성.
+		AdminDAO adao = new AdminDAO();
 		AdminVO checkAdvo = adao.getAdmin(loginAdvo);
 
 		// 3. 로그인 여부에 따른 응답 화면 구성
-		// 응답 메시지에 대한 인코딩 설정
-		response.setContentType("text/html;charset=UTF-8");
 
 		// HTTP 응답 프로토콜 message-body와 연결된 출력 스트림 획득
 		PrintWriter out = response.getWriter();
@@ -79,7 +78,7 @@ public class LoginServlet extends HttpServlet {
 				out.println("history.back();"); // 이전 페이지로 돌아가기
 				out.println("</script>");
 			}
-		} else { // 회원 정보가 없을 
+		} else { // 회원 정보가 없을
 			// 로그인 화면으로 다시 이동한다.
 			out.println("<script>");
 			out.println("alert('회원 정보가 없습니다.');");

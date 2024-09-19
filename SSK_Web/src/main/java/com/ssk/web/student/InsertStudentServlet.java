@@ -33,20 +33,6 @@ public class InsertStudentServlet extends HttpServlet {
 
 		System.out.println("InsertStudentServlet ==> /insertStudent.do");
 		
-		// 0. 상태 정보 체크
-				HttpSession session = request.getSession();
-				String adminId = (String) session.getAttribute("adminId");
-				System.out.println("InsertStudentServlet ==> adminId : " + adminId);
-
-				if (adminId == null) {
-					response.sendRedirect("/");
-				}
-
-		// 인코딩 처리
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		ServletContext context = getServletContext();
-		encoding = context.getInitParameter("boardEncoding");
 
 		// printWriter 객체 생성.
 		PrintWriter out = response.getWriter();
@@ -59,12 +45,13 @@ public class InsertStudentServlet extends HttpServlet {
 		String major = request.getParameter("major");
 		String phone = request.getParameter("phone");
 		
+		HttpSession session = request.getSession();
 		session = request.getSession();
-		adminId = (String) session.getAttribute("adminId");
+		String adminId = (String) session.getAttribute("adminId");
 
 		// 2. DB 연동 처리.
 		StudentVO stvo = new StudentVO();
-		stvo.setNum(Integer.parseInt(num));
+		stvo.setNum(Integer.parseInt(num)); // 주입 시 정수형으로 변환.
 		stvo.setName(name);
 		stvo.setMajor(major);
 		stvo.setPhone(phone);

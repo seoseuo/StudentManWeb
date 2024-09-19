@@ -31,11 +31,6 @@ public class InsertAdminServlet extends HttpServlet {
 
 		System.out.println("InsertAdminServlet ==> /insertAdmin.do");
 
-		// 1. 인코딩 처리.
-		request.setCharacterEncoding("UTF-8");
-		ServletContext context = getServletContext();
-		encoding = context.getInitParameter("boardEncoding");
-
 		// 2. 프론트에서 값 얻어냄.
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
@@ -51,6 +46,8 @@ public class InsertAdminServlet extends HttpServlet {
 
 		AdminDAO adao = new AdminDAO();
 		adao.insertAdmin(advo);
+		
+		System.out.println("InsertAdminServlet ==> 관리자 회원 가입 완료.");
 
 		// 4. 화면 이동
 		response.sendRedirect("login.html");

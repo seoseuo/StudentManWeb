@@ -23,14 +23,6 @@ public class ToMainServlet extends HttpServlet {
 
 		System.out.println("ToMainServlet ==> /toMain.do");
 
-		// 0. 상태 정보 체크
-		HttpSession session = request.getSession();
-		String adminId = (String) session.getAttribute("adminId");
-		System.out.println("ToMainServlet ==> adminId : " + adminId);
-
-		if (adminId == null) {
-			response.sendRedirect("/");
-		}
 
 		// 1. 응답 화면 구성
 		response.setContentType("text/html;charset=UTF-8");
@@ -40,7 +32,7 @@ public class ToMainServlet extends HttpServlet {
 		out.println("<head>");
 		out.println("<meta charset=\"UTF-8\">");
 		out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-		out.println("<title>학생 관리 웹</title>");
+		out.println("<title>학생 관리 웹 - 메인</title>");
 		out.println("<link rel=\"stylesheet\" href=\"./css/style.css\">");
 		out.println("</head>");
 		out.println("<body>");
@@ -59,11 +51,11 @@ public class ToMainServlet extends HttpServlet {
 		out.println("<h2>전체 출력</h2>");
 		out.println("<p>모든 학생의 정보를 출력합니다.</p>");
 		out.println("</a>");
-		out.println("<a href=\"searchStudent.html\" class=\"menu-item\">");
+		out.println("<a href=\"getStudent.html\" class=\"menu-item\">");
 		out.println("<h2>학생 조회</h2>");
 		out.println("<p>특정 학생을 조회합니다.</p>");
 		out.println("</a>");
-		out.println("<a href=\"editStudentSearch.html\" class=\"menu-item\">");
+		out.println("<a href=\"updateGetStudent.html\" class=\"menu-item\">");
 		out.println("<h2>정보 수정</h2>");
 		out.println("<p>학생 정보를 수정합니다.</p>");
 		out.println("</a>");

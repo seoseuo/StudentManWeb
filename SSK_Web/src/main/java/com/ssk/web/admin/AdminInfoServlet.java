@@ -60,7 +60,6 @@ public class AdminInfoServlet extends HttpServlet {
 		// studentList에 아무 값이 없으면 응답 화면을 따로 보여준다.
 		if (getAdvo != null) {
 			// 셀 내용
-
 			out.println("            <div class=\"card\">");
 			out.println("                <img src=\"./images/profile.png\" alt=\"학생 사진\">");
 			out.println("                <div class=\"card-content\">");
@@ -70,9 +69,11 @@ public class AdminInfoServlet extends HttpServlet {
 			out.println("                </div>");
 			out.println("            </div>");
 			out.println("</div>");
+			System.out.println("AdminInfoServlet ==> 내 정보 이동 완료.");
 
 		} else {
 			out.println("<h2>등록된 학생이 없습니다.</h2>");
+			System.out.println("AdminInfoServlet ==> 내 정보 이동 미완료, 정보 결과 없음.");
 		}
 		out.println("        </div>");
 		out.println("    </div>");

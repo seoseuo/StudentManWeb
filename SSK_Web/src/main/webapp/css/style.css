@@ -54,6 +54,12 @@ h1 {
     margin-bottom: 10px;
     color: #333;
 }
+h2 {
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #333;
+}
 hr {
     margin-bottom: 20px;
 }
@@ -140,16 +146,17 @@ input[type="submit"]:hover ,input[type="button"]:hover, button:hover {
 
 .card-container {
     width: 700px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열로 나열 */
     gap: 20px; /* 카드 사이 간격 */
-    justify-content: center;
+    justify-items: center;
 }
 
 .card-container-search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열로 나열 */
+    gap: 20px;
+    justify-items: center;
     margin-top: 20px;
 }
 
@@ -170,7 +177,7 @@ input[type="submit"]:hover ,input[type="button"]:hover, button:hover {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 20px); /* 두 열로 나열되도록 너비 설정 */
+    width: 100%; /* 그리드 안에서 100% 너비 사용 */
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -179,21 +186,25 @@ input[type="submit"]:hover ,input[type="button"]:hover, button:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
+
 .card img, .card-search img {
     border-radius: 50%;
     width: 100px;
     margin-right: 20px;
 }
+
 .card-content {
     display: flex;
     flex-direction: column;
 }
+
 .card-content h2 {
     font-size: 20px;
     font-weight: 320;
     color: #333;
     margin-bottom: 10px;
 }
+
 .card-content p {
     font-size: 14px;
     color: #666;
