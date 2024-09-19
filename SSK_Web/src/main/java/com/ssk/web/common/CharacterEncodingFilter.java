@@ -4,7 +4,6 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -15,49 +14,26 @@ import javax.servlet.http.HttpFilter;
 /**
  * Servlet Filter implementation class CharacterEncodingFilter
  */
-@WebFilter(urlPatterns = {"*.do"},
-			initParams = @WebInitParam(name = "studentEncoding", value = "UTF-8"))
+@WebFilter(urlPatterns = { "*.do" }, initParams = @WebInitParam(name = "studentEncoding", value = "UTF-8"))
 public class CharacterEncodingFilter extends HttpFilter implements Filter {
-     
+
 	private static final long serialVersionUID = 1L;
 	private String encoding;
-	
-    /**
-     * @see HttpFilter#HttpFilter()
-     */
-    //public CharacterEncodingFilter() {
-        //super();
-        // TODO Auto-generated constructor stub
-    //}
 
-	/**
-	 * @see Filter#destroy()
-	 */
-	//public void destroy() {
-		// TODO Auto-generated method stub
-	//}
-
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		// 서블릿이 수행되기 전에 인코딩을 처리합니다.
-		//ServletContext context = request.getServletContext();
-		//String encoding = context.getInitParameter("boardEncoding");
 		request.setCharacterEncoding(encoding);
-		
-		// pass the request along the filter chain
+
+		// 응답의 Content-Type 설정
+		response.setContentType("text/html;charset=" + encoding);
+
+		// 필터 체인으로 요청을 전달합니다.
 		chain.doFilter(request, response);
 	}
 
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
 	public void init(FilterConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		// 초기화 파라미터에서 인코딩 값을 읽어옵니다.
 		encoding = config.getInitParameter("studentEncoding");
 	}
 
