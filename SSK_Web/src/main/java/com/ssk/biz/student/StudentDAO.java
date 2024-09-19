@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ssk.biz.admin.AdminVO;
 import com.ssk.biz.common.JDBCUtil;
 
 public class StudentDAO {
@@ -15,9 +16,14 @@ public class StudentDAO {
 	private PreparedStatement stmt;
 	private ResultSet rs;
 
-	private final String STUDENT_INSERT = "INSERT INTO STUDENT VALUES(?,?,?,?,?)";
-	private final String STUDENT_GETCOUNT_BY_ADMIN_ID = "SELECT COUNT(*) FROM STUDENT WHERE ADMIN_ID = ?";
-	private final String STUDENT_GETLIST = "SELECT * FROM STUDENT WHERE ADMIN_ID = ?";
+	private final String STUDENT_INSERT = "INSERT INTO STUDENT VALUES(?,?,?,?,?)"; // 학생 등록
+	private final String STUDENT_GETCOUNT_BY_ADMIN_ID = "SELECT COUNT(*) FROM STUDENT WHERE ADMIN_ID = ?"; // 관리자가 관리하는
+																											// 학생 인원 수
+	// 직접 카운트 : 데이터베이스 서버에서 수행되므로 네트워크와 애플리케이션 서버의 리소스를 절약할 수 있습니다.
+
+	private final String STUDENT_GETLIST = "SELECT * FROM STUDENT WHERE ADMIN_ID = ? ORDER BY NUM ASC"; // 관리자가 관리하는 전체
+																										// 학생
+	private final String STUDENT_GET = "SELECT * FROM STUDENT WHERE NUM = ?"; // 학생 정보 가져오기
 
 	// 학생 등록하기
 	public void insertStudent(StudentVO stvo) throws SQLException {
@@ -65,11 +71,11 @@ public class StudentDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(stvo.getAdminId() + " 관리자님, 등록한 학생 수는 " + result + ", 데이터 처리 성공!");
+		System.out.println(stvo.getAdminId() + " 관리자님, 등록한 학생 수는 " + result + " 명 건의 데이터 처리 성공!");
 		return result;
 	}
 
-	// 학생 전체 출력 
+	// 학생 전체 출력
 	public List<StudentVO> getStudentList(StudentVO stvo) {
 		// TODO Auto-generated method stub
 
@@ -102,8 +108,48 @@ public class StudentDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(stvo.getAdminId() + " 관리자님, 전체출력 하는 학생 수 " + studentList.size() + "명 건의 데이터 처리 성공!");
+		System.out.println(stvo.getAdminId() + " 관리자님, 전체출력 하는 학생 수 " + studentList.size() + " 명 건의 데이터 처리 성공!");
 		return studentList;
+	}
+
+	// 학생 정보 조회
+	public StudentVO getStudent(StudentVO stvo) {
+		// TODO Auto-generated method stub
+
+		// 반환 객체 생성.
+		StudentVO getStvo = null;
+
+		try {
+			// 연결 얻기.
+			conn = JDBCUtil.getConnection();
+
+			// 쿼리문 적용.
+			stmt = conn.prepareStatement(STUDENT_GET);
+
+			// 매개변수로 받은 adminVo 객체의 아이디를 조회할 id 칼럼으로 설정.
+			stmt.setInt(1, stvo.getNum());
+			rs = stmt.executeQuery();
+
+			// 가져올 객체가 한개 뿐 이지만, 반복문을 사용하는 이유는 , 코드의 일관성 및 예기치 못한 오류를 방지하기 위함이다.
+			while (rs.next()) {
+				getStvo = new StudentVO();
+				getStvo.setNum(rs.getInt("NUM"));
+				getStvo.setName(rs.getString("NAME"));
+				getStvo.setMajor(rs.getString("MAJOR"));
+				getStvo.setPhone(rs.getString("PHONE"));
+				getStvo.setAdminId(rs.getString("ADMIN_ID"));
+
+			}
+			// 반환할 객체에 정보들을 설정.
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(rs, stmt, conn);
+		}
+		System.out.println(getStvo.getAdminId() + " 관리자님, 학생 정보조회 ==> 학번 : " + getStvo.getNum() + " 이름 : " + getStvo.getName()
+				+ " 전공 : " + getStvo.getMajor() + " 전화번호 : " + getStvo.getPhone() + " | 데이터 처리 성공!");
+		return getStvo;
 	}
 
 }
