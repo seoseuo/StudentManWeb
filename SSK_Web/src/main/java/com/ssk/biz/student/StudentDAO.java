@@ -92,7 +92,7 @@ public class StudentDAO {
 				getStvo.setPhone(rs.getString("PHONE"));
 				getStvo.setAdminId(rs.getString("ADMIN_ID"));
 
-				studentList.add(getStvo);
+				studentList.add(getStvo); // 리스트에 한 객체 씩 등록해준다.
 
 			}
 
