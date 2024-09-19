@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ssk.biz.common.JDBCUtil;
 
@@ -15,6 +17,7 @@ public class StudentDAO {
 
 	private final String STUDENT_INSERT = "INSERT INTO STUDENT VALUES(?,?,?,?,?)";
 	private final String STUDENT_GETCOUNT_BY_ADMIN_ID = "SELECT COUNT(*) FROM STUDENT WHERE ADMIN_ID = ?";
+	private final String STUDENT_GETLIST = "SELECT * FROM STUDENT WHERE ADMIN_ID = ?";
 
 	// 학생 등록하기
 	public void insertStudent(StudentVO stvo) throws SQLException {
@@ -25,9 +28,9 @@ public class StudentDAO {
 			stmt.setString(2, stvo.getName());
 			stmt.setString(3, stvo.getMajor());
 			stmt.setString(4, stvo.getPhone());
-			stmt.setString(5, stvo.getAdminId()); // assuming there's a fifth parameter
+			stmt.setString(5, stvo.getAdminId());
+			System.out.println(stvo.getAdminId() + " 관리자님, 학생 등록 " + stmt.executeUpdate() + " 건 데이터 처리 성공!");
 
-			stmt.executeUpdate();
 		} catch (SQLException e) {
 			if (e.getSQLState().equals("23505")) { // H2 데이터 베이스 unique 값 중복 에러코드.
 				System.out.println("StudentDAO ==> insertStudent : 중복된 학번입니다.");
@@ -62,6 +65,45 @@ public class StudentDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
+		System.out.println(stvo.getAdminId() + " 관리자님, 등록한 학생 수는 " + result + ", 데이터 처리 성공!");
 		return result;
 	}
+
+	// 학생 전체 출력 
+	public List<StudentVO> getStudentList(StudentVO stvo) {
+		// TODO Auto-generated method stub
+
+		List<StudentVO> studentList = new ArrayList<StudentVO>();
+
+		try {
+
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(STUDENT_GETLIST);
+			stmt.setString(1, stvo.getAdminId());
+
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				StudentVO getStvo = new StudentVO();
+				getStvo.setNum(rs.getInt("NUM"));
+				getStvo.setName(rs.getString("NAME"));
+				getStvo.setMajor(rs.getString("MAJOR"));
+				getStvo.setPhone(rs.getString("PHONE"));
+				getStvo.setAdminId(rs.getString("ADMIN_ID"));
+
+				studentList.add(getStvo);
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(rs, stmt, conn);
+		}
+		System.out.println(stvo.getAdminId() + " 관리자님, 전체출력 하는 학생 수 " + studentList.size() + "명 건의 데이터 처리 성공!");
+		return studentList;
+	}
+
 }
