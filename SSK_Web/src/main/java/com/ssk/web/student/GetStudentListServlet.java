@@ -56,7 +56,7 @@ public class GetStudentListServlet extends HttpServlet {
 		out.println("    <div class=\"container\">");
 		out.println("        <button class=\"menu-button\" onclick=\"window.location.href='/toMain.do';\">홈</button>");
 		out.println("");
-		out.println("        <h1>전체 출력</h1>");
+		out.println("        <h1>전체 출력 : 총 " + studentList.size() + "명</h1>");
 		out.println("        <hr>");
 		out.println("        <div class=\"card-container\">");
 
@@ -67,10 +67,10 @@ public class GetStudentListServlet extends HttpServlet {
 				out.println("            <div class=\"card\">");
 				out.println("                <img src=\"./images/profile.png\" alt=\"학생 사진\">");
 				out.println("                <div class=\"card-content\">");
-				out.println("                    <h2>"+getStvo.getName()+"</h2>");
-				out.println("                    <p><strong>학번:</strong> "+getStvo.getNum()+"</p>");
-				out.println("                    <p><strong>학과:</strong> "+getStvo.getMajor()+"</p>");
-				out.println("                    <p><strong>전화번호:</strong> "+getStvo.getPhone()+"</p>");
+				out.println("                    <h2>" + getStvo.getName() + "</h2>");
+				out.println("                    <p><strong>학번:</strong> " + getStvo.getNum() + "</p>");
+				out.println("                    <p><strong>학과:</strong> " + getStvo.getMajor() + "</p>");
+				out.println("                    <p><strong>전화번호:</strong> " + getStvo.getPhone() + "</p>");
 				out.println("                </div>");
 				out.println("            </div>");
 			}
