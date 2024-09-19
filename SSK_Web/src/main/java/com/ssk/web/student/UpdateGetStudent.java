@@ -30,7 +30,6 @@ public class UpdateGetStudent extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("UpdateGetStudent ==> /updateGetStudent.do");
 
-			
 		// 1.프론트 단에서 입력한 학번 정보를 가져온다.
 		String num = request.getParameter("num");
 
@@ -68,17 +67,21 @@ public class UpdateGetStudent extends HttpServlet {
 
 			out.println("<form id=\"insertStudentForm\" method=\"post\" action=\"/updateStudent.do\">");
 			out.println("    <label for=\"num\">학번 <span class=\"input_warn\" id=\"num_warn\"></span></label>");
-			out.println("    <input type=\"text\" id=\"num\" name=\"num\" value=\"" + getStvo.getNum() + "\"  readonly>");
+			out.println(
+					"    <input type=\"text\" id=\"num\" name=\"num\" value=\"" + getStvo.getNum() + "\" readonly>");
 			out.println("    <label for=\"name\">이름 <span class=\"input_warn\" id=\"name_warn\"></span></label>");
 			out.println(
-					"    <input type=\"text\" id=\"name\" name=\"name\" value=\"" + getStvo.getName() + "\"  readonly>");
+					"    <input type=\"text\" id=\"name\" name=\"name\" value=\"" + getStvo.getName() + "\" readonly>");
 			out.println("    <label for=\"major\">학과 <span class=\"input_warn\" id=\"major_warn\"></span></label>");
 			out.println("    <input type=\"text\" id=\"major\" name=\"major\" placeholder=\"전공을 입력하세요. 예시 : **학과\">");
 			out.println("    <label for=\"phone\">전화번호 <span class=\"input_warn\" id=\"phone_warn\"></span></label>");
 			out.println(
 					"    <input type=\"text\" id=\"phone\" name=\"phone\" placeholder=\"전화번호를 입력하세요. 예시 : 010-****-****\">");
+			out.println("    <label for=\"adminId\">관리자 아이디</label>");
+			out.println("    <input type=\"text\" placeholder=\"" + getStvo.getAdminId() + "\" readonly>");
 			out.println("    <input type=\"submit\" value=\"등록\">");
 			out.println("</form>");
+
 			System.out.println("UpdateGetStudent ==> 학생 조회 완료.");
 		} else {
 			out.println("<h2>검색한 학생이 없습니다.</h2>");
