@@ -1,6 +1,7 @@
 package com.ssk.web.admin;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -37,20 +38,33 @@ public class InsertAdminServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String count = request.getParameter("count");
 
-		// 3. DB 연동 처리.
+		// 2. 해당 아이디의 중복 검사 실시.
+		
 		AdminVO advo = new AdminVO();
 		advo.setId(id);
 		advo.setPassword(password);
 		advo.setName(name);
 		advo.setCount(Integer.parseInt(count));
-
-		AdminDAO adao = new AdminDAO();
-		adao.insertAdmin(advo);
 		
-		System.out.println("InsertAdminServlet ==> 관리자 회원 가입 완료.");
-
-		// 4. 화면 이동
-		response.sendRedirect("login.html");
+		AdminDAO adao = new AdminDAO();
+		AdminVO getAdvo = adao.getAdmin(advo);
+		
+		
+		if(getAdvo==null) {
+			// 해당 아이디의 관리자가 없으면 회원가입 진행.
+			adao.insertAdmin(advo);
+			System.out.println("InsertAdminServlet ==> 관리자 회원 가입 완료.");
+			// 4. 화면 이동
+			response.sendRedirect("login.html");
+		} else {
+			// 아니라면 경고문구 후 뒤로가기.
+			System.out.println("InsertAdminServlet ==> 관리자 회원 가입 미완료, 아이디 중복.");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('중복된 아이디 입니다.');");
+			out.println("history.back();"); // 이전 페이지로 돌아가기
+			out.println("</script>");
+		}	
 	}
 
 }
