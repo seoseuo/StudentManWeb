@@ -47,10 +47,8 @@ public class InsertAdminServlet extends HttpServlet {
 		advo.setCount(Integer.parseInt(count));
 		
 		AdminDAO adao = new AdminDAO();
-		AdminVO getAdvo = adao.getAdmin(advo);
 		
-		
-		if(getAdvo==null) {
+		if(adao.getAdmin(advo)==null) {
 			// 해당 아이디의 관리자가 없으면 회원가입 진행.
 			adao.insertAdmin(advo);
 			System.out.println("InsertAdminServlet ==> 관리자 회원 가입 완료.");

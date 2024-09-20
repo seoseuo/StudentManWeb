@@ -55,7 +55,7 @@ public class AdminInfoServlet extends HttpServlet {
 		out.println("<div class=\"container\">");
 		out.println("    <button class=\"menu-button\" onclick=\"window.location.href='toMain.do';\">홈</button>");
 		out.println("");
-		out.println("    <h1>학생 조회</h1>");
+		out.println("    <h1>내 정보</h1>");
 		out.println("    <hr>");
 		// studentList에 아무 값이 없으면 응답 화면을 따로 보여준다.
 		if (getAdvo != null) {

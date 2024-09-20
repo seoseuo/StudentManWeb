@@ -77,8 +77,10 @@ public class AdminDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(advo.getId() + " 관리자님, 정보조회 ==> 아이디 : " + getAdvo.getId() + " 이름 : " + getAdvo.getName()
-				+ " 등록할 학생 수 : " + getAdvo.getCount() + " | 데이터 처리 성공!");
+		if(getAdvo!=null) {
+			System.out.println(advo.getId() + " 관리자님, 정보조회 ==> 아이디 : " + getAdvo.getId() + " 이름 : " + getAdvo.getName()
+			+ " 등록할 학생 수 : " + getAdvo.getCount() + " | 데이터 처리 성공!");
+		}
 		return getAdvo;
 	}
 

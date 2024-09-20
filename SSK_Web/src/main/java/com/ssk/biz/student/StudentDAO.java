@@ -73,7 +73,7 @@ public class StudentDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(stvo.getAdminId() + " 관리자님, 등록한 학생 수는 " + result + " 명 건의 데이터 처리 성공!");
+		System.out.println(stvo.getAdminId() + " 관리자님, 등록한 학생 수는 " + result + " 명.");
 		return result;
 	}
 
@@ -149,9 +149,11 @@ public class StudentDAO {
 		} finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(
-				getStvo.getAdminId() + " 관리자님, 학생 정보 조회 ==> 학번 : " + getStvo.getNum() + " 이름 : " + getStvo.getName()
-						+ " 전공 : " + getStvo.getMajor() + " 전화번호 : " + getStvo.getPhone() + " | 데이터 처리 성공!");
+		if(getStvo!=null) {
+			System.out.println(
+					getStvo.getAdminId() + " 관리자님, 학생 정보 조회 ==> 학번 : " + getStvo.getNum() + " 이름 : " + getStvo.getName()
+							+ " 전공 : " + getStvo.getMajor() + " 전화번호 : " + getStvo.getPhone() + " | 데이터 처리 성공!");
+		}
 		return getStvo;
 	}
 
