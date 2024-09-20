@@ -48,7 +48,7 @@ public class AdminInfoServlet extends HttpServlet {
 		out.println("<head>");
 		out.println("    <meta charset=\"UTF-8\">");
 		out.println("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-		out.println("    <title>학생 등록</title>");
+		out.println("    <title>학생 관리 웹 - 내 정보</title>");
 		out.println("    <link rel=\"stylesheet\" href=\"./css/style.css\">");
 		out.println("</head>");
 		out.println("<body>");
