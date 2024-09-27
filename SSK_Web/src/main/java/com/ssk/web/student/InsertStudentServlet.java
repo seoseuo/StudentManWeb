@@ -73,7 +73,7 @@ public class InsertStudentServlet extends HttpServlet {
 		}
 		// 3. 등록을 마친 후 메인화면으로 이동.
 		System.out.println("InsertStudentServlet ==> 학생 등록 완료.");
-		response.sendRedirect("/toMain.do");
+		response.sendRedirect("/toInsertStudent.do");
 
 	}
 
