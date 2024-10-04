@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>학생 관리 웹 - 정보 수정</title>
+<link rel="stylesheet" href="./css/style.css">
+<script src="./js/searchStudent.js"></script>
+</head>
+<body>
+	<div class="container">
+		<button class="menu-button"
+			onclick="window.location.href='toMain.do';">홈</button>
+
+		<h1>정보 수정</h1>
+		<hr>
+		<form id="serchStudentForm" method="post" action="/updateGetStudent.do">
+			<label for="num">학번 <span class="input_warn" id="num_warn"></span></label>
+			<input type="text" id="num" name="num"
+				placeholder="학번을 입력하세요. 예시 : 20******"> <input type="submit"
+				value="검색">
+		</form>
+	</div>
+</body>
+</html>
